@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
 
+import { backPort } from '../App.js';
+
 export default class ViewGrill extends Component {
   constructor(props){
     super(props);
-    this.state = { ...props.grill }
+    this.state = { grills: {} };
   }
+
+getGrills(){
+  fetch(`http://localhost:${backPort}/grills`, { method: 'GET', mode: 'cors' })
+  .then(response => response.json())
+  .then(grills => {
+    this.setState({ grills });
+  })
+  .catch(err => console.err(err));
+  }
+}
+
+
+componentDidMount(){
+  this.getGrills(grills);
+}
 
   render() {
     return (

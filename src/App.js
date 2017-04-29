@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
-import ViewGrill from './components/ViewGrill.js';
+import RenterLogin from './components/RenterLogin.js';
+import ViewGrills from './components/ViewGrills.js';
 
-const grill = {
-  brand: 'Weber',
-  name: 'The 44',
-  series: 'Ranch Kettle',
-  fuel: 'Charcoal',
-  size: 'Large',
-  price: 7.99
-}
-
+export const backPort = 3000;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <ViewGrill grill={ grill } />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={RenterLogin} />
+          <Route path="/grills" component={ViewGrills} />
+        </Switch>
+      </Router>
     );
   }
 }
