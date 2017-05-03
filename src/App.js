@@ -1,20 +1,28 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
+//imports
+import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+//CSS
 import './App.css';
 
-import RenterLogin from './components/RenterLogin.js';
-import ViewGrills from './components/ViewGrills.js';
-
-export const backPort = 3000;
+//components
+import Login from './components/Login';
+import GrillSearch from './components/GrillSearch';
+import Calendar from './components/Calendar';
+import RegisterForm from './components/RegisterForm';
 
 class App extends Component {
-  render() {
-    return (
+  render(){
+    return(
       <Router>
         <Switch>
-          <Route exact path="/" component={RenterLogin} />
-          <Route path="/grills" component={ViewGrills} />
+          <Route exact path='/' component={Login} />
+          <Route path='/grills' component={GrillSearch} />
+          <Route path='/calendar' component={Calendar} />
+          <Route path='/register' component={RegisterForm} />
         </Switch>
       </Router>
     );
