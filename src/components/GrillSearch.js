@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 
+
 export default class GrillSearch extends Component{
   constructor(props){
     super(props);
-    this.state = {grill: {}};
+    this.state = {};
+  }
+
+  changeGrillBySize(size){
+    this.setState({grill: size})
   }
 
   getAllGrills(){
     fetch(`http://localhost:5000/grills`, {method: 'GET', mode: 'cors'})
     .then(response => response.json())
-    .then(grill => {
-      this.setState({grill});
+    .then(grills => {
+      this.setState({grills});
     })
     .catch(err => console.log(err));
   }
@@ -43,12 +48,7 @@ export default class GrillSearch extends Component{
           <button type="submit" id="search">Search</button>
         </form>
         <div className="viewGrill">
-          <ul>
-            <li>Name: {this.state.grill.name}</li>
-            <li>Size: {this.state.grill.size}</li>
-            <li>Fuel: {this.state.grill.fuel}</li>
-            <li>Price: {this.state.grill.price}</li>
-          </ul>
+        //insert ViewGrill component here
         </div>
       </div>
     )

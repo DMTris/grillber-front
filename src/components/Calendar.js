@@ -2,6 +2,24 @@ import React, {Component} from 'react';
 
 export default class Calendar extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = null;
+  }
+
+  getCalendar(){
+    fetch(`http://localhost:5000/calendar`, {method: 'GET', mode: 'cors'})
+    .then(response => response.json())
+    .then(calendar => {
+      this.setState({calendar});
+    })
+    .catch(err => console.log(err));
+  }
+
+  componentDidMount(){
+    this.getCalendar()
+  }
+
   render(){
     return(
       <div>
