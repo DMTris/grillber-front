@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 export default class RegisterForm extends Component {
 
+
   constructor(props){
     super(props);
     this.state = { renter: {} };
@@ -23,12 +24,13 @@ export default class RegisterForm extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault();
+    e.preventdefault();
     let renter = {}
     renter.name = this.state.name;
     renter.email = this.state.email;
     renter.password = this.state.password;
     this.createNewRenter(renter);
+    this.props.history.push('/');
   }
 
   componentDidMount(){

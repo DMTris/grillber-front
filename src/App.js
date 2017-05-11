@@ -10,7 +10,7 @@ import './App.css';
 
 //components
 import Login from './components/Login';
-import GrillSearch from './components/GrillSearch';
+import Grills from './components/Grills';
 import Calendar from './components/Calendar';
 import RegisterForm from './components/RegisterForm';
 
@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route path='/grills' component={GrillSearch} />
+          <Route path='/grills' component={Grills} />
           <Route path='/calendar' component={Calendar} />
           <Route path='/register' component={RegisterForm} />
         </Switch>
