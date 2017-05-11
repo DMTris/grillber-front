@@ -25,7 +25,7 @@ export default class RegisterForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let renter = {}
+    let renter = {};
     renter.name = `${this.refs.newFName.value} ${this.refs.newLName.value}`;
     renter.email = this.refs.newEmail.value;
     renter.password = this.refs.newPassword.value;
@@ -55,3 +55,8 @@ export default class RegisterForm extends Component {
     );
   }
 }
+
+/**
+**@TODO Do I need to setState with the collection here? As in do I need to fetch the collection of renters to create a new one?
+**@TODO Needs a redirect after using the Submit button
+**/

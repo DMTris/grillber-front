@@ -1,10 +1,16 @@
 import React from 'react';
 
+const styles = {
+  border: '1px solid #545454',
+  margin: '10px',
+  padding: '15px',
+  width: '100px'
+};
+
 export default grill => (
-  <div>
-    <h4>{grill.name}</h4>
-    <p>{grill.size}</p>
-    <p>{grill.fuel}</p>
-    <p>{grill.price}</p>
+  <div style={styles}>
+    <h3>{grill.name}</h3>
+    <h4>Description</h4>
+    <p>Size: {grill.size}<br/>Fuel: {grill.fuel}<br/>Price: {grill.price}</p>
   </div>
 )

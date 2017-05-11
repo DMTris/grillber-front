@@ -15,7 +15,7 @@ export default class Grills extends Component {
       .then(grills => {
         this.setState({grills});
       })
-      .catch(err => console.log(err));
+      .catch(console.error);
   }
 
   render(){
@@ -28,3 +28,6 @@ export default class Grills extends Component {
   }
 
 }
+/**
+**@TODO need to add a key to the map function on 25.
+**/
