@@ -8,7 +8,8 @@ export default class Calendar extends Component {
     super(props);
 
     this.state = {
-      calendar: []
+      calendar: [],
+      editState: true
     };
   }
 
@@ -24,8 +25,8 @@ export default class Calendar extends Component {
   render(){
     return(
       <div>
-      <h2>Calendar</h2>
-        {this.state.calendar.map(appointment => ViewAppointment(appointment))}
+        <h2>Calendar</h2>
+          {this.state.calendar.map(appointment => ViewAppointment(appointment))}
       </div>
     );
   }
