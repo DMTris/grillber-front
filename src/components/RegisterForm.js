@@ -14,7 +14,7 @@ export default class RegisterForm extends Component {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    fetch(`http://localhost:5000/renters`, {
+    fetch(`https://fathomless-ravine-83804.herokuapp.com/renters`, {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify(renter),
@@ -30,10 +30,11 @@ export default class RegisterForm extends Component {
     renter.email = this.refs.newEmail.value;
     renter.password = this.refs.newPassword.value;
     this.createNewRenter(renter);
+    this.props.history.push('/');
   }
 
   componentDidMount(){
-    fetch(`http://localhost:5000/renters`)
+    fetch(`https://fathomless-ravine-83804.herokuapp.com/renters`)
     .then(res => res.json())
     .then(renters => this.setState({renters}))
     .catch(console.error);

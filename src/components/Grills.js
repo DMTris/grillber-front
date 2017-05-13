@@ -10,7 +10,7 @@ export default class Grills extends Component {
   }
 
   componentDidMount(){
-    fetch(`http://localhost:5000/grills`, {method: 'GET', mode: 'cors'})
+    fetch(`https://fathomless-ravine-83804.herokuapp.com/grills`, {method: 'GET', mode: 'cors'})
       .then(response => response.json())
       .then(grills => {
         this.setState({grills});

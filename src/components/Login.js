@@ -12,7 +12,7 @@ export default class Login extends Component {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    fetch(`http://localhost:5000/renters/${renter.email}`, {
+    fetch(`https://fathomless-ravine-83804.herokuapp.com/renters/${renter.email}`, {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify(renter),

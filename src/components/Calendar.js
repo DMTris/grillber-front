@@ -8,7 +8,7 @@ export default class Calendar extends Component {
   }
 
   getCalendar(){
-    fetch(`http://localhost:5000/calendar`, {method: 'GET', mode: 'cors'})
+    fetch(`https://fathomless-ravine-83804.herokuapp.com/calendar`, {method: 'GET', mode: 'cors'})
     .then(response => response.json())
     .then(calendar => {
       this.setState({calendar});
